@@ -85,6 +85,42 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
+
+            // Define item name: private field, public property, and database column.
+            private string _name;
+
+            [Column]
+            public string Name
+            {
+                get { return _name; }
+                set
+                {
+                    if (_name != value)
+                    {
+                        NotifyPropertyChanging("Name");
+                        _name = value;
+                        NotifyPropertyChanged("Name");
+                    }
+                }
+            }
+
+            private DateTime _date; 
+
+            public DateTime Date
+            {
+                get { return _date; }
+                set
+                {
+                    if (_date != value)
+                    {
+                        NotifyPropertyChanging("Date");
+                        _date = value;
+                        NotifyPropertyChanged("Date");
+                    }
+                }
+            }
+
+
  #region INotifyPropertyChanged Members
 
             public event PropertyChangedEventHandler PropertyChanged;
