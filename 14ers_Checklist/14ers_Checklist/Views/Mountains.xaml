@@ -31,10 +31,19 @@
                 <phone:LongListSelector x:Name="MainLongListSelector" Margin="0,0,-12,0" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding HeightString}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
+                            <Grid Margin="0,0,0,17">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="400"></ColumnDefinition>
+                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                 </Grid.ColumnDefinitions>
+                                
+                                <TextBlock Grid.Row="0" Grid.Column ="0" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Grid.Row ="1" Grid.Column="0" Text="{Binding HeightString}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextAccentStyle}" />
+                                <!--<CheckBox Grid.Column="1" Grid.Row="0" Checked="{Binding Check}/>
+                                --></Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>

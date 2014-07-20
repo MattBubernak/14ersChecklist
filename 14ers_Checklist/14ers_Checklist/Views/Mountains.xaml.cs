@@ -23,5 +23,10 @@ namespace _14ers_Checklist.Views
         {
 
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
