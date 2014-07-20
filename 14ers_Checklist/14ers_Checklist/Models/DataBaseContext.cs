@@ -228,9 +228,9 @@ namespace _14ers_Checklist.Models
 
             #endregion
         }
-        #region note
+        #endregion
 
 
-   
+
     }
 }
