@@ -33,7 +33,7 @@
                         <DataTemplate>
                             <Grid Margin="0,0,0,17">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="70"></RowDefinition>
                                     <RowDefinition Height="20"></RowDefinition>
 
                                 </Grid.RowDefinitions>
@@ -44,7 +44,7 @@
                                 
                                 <TextBlock Grid.Row="0" Grid.Column ="0" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                                 <TextBlock Grid.Row ="1" Grid.Column="0" Text="{Binding HeightString}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextAccentStyle}" />
-                                <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding Check}"></CheckBox>    
+                                <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding Check}" Click="CheckBox_Hit"></CheckBox>    
                             </Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>

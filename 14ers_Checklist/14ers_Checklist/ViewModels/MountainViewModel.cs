@@ -39,6 +39,7 @@ namespace _14ers_Checklist.ViewModels
         public Boolean Check
         {
             get { return databaseInstance.Check; }
+            set { databaseInstance.Check = true; }
         }
 
     }
