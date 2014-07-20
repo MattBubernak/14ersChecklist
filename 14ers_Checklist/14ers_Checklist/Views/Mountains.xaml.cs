@@ -16,7 +16,12 @@ namespace _14ers_Checklist.Views
         public Mountains()
         {
             InitializeComponent();
-            this.DataContext = Checklist
+            this.DataContext = ChecklistViewModel.getInstance(); 
+        }
+
+        private void MountainListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

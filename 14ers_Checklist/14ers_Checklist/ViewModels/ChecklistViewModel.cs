@@ -11,8 +11,8 @@ namespace _14ers_Checklist.ViewModels
 {
     class ChecklistViewModel : BaseViewModel
     {
-        private ChecklistViewModel _checkListViewModel;
-        public ObservableCollection<MountainViewModel> mountains; 
+        private static ChecklistViewModel _checkListViewModel = null;
+        public ObservableCollection<MountainViewModel> mountains { get; set; }
         
         private ChecklistViewModel()
         {
@@ -20,11 +20,11 @@ namespace _14ers_Checklist.ViewModels
             populate_mountains(); 
         }
 
-        public ChecklistViewModel getInstance()
+        public static ChecklistViewModel getInstance()
         {
             if (_checkListViewModel == null)
             {
-                this._checkListViewModel = new ChecklistViewModel(); 
+                _checkListViewModel = new ChecklistViewModel(); 
             }
             return _checkListViewModel; 
         }

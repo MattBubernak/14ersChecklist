@@ -27,6 +27,10 @@ namespace _14ers_Checklist.ViewModels
         {
             get { return databaseInstance.Height; }
         }
+        public string HeightString
+        {
+            get { return String.Format("{0:n0}",databaseInstance.Height); }
+        }
         public DateTime Date
         {
             get { return databaseInstance.Date; }
