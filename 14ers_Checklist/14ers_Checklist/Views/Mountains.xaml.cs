@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using _14ers_Checklist.ViewModels; 
 
 namespace _14ers_Checklist.Views
 {
@@ -15,6 +16,7 @@ namespace _14ers_Checklist.Views
         public Mountains()
         {
             InitializeComponent();
+            this.DataContext = Checklist
         }
     }
 }

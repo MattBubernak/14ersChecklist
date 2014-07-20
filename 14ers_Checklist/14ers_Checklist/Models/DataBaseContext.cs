@@ -120,6 +120,22 @@ namespace _14ers_Checklist.Models
                 }
             }
 
+            private Boolean _check; 
+
+            public Boolean Check
+            {
+                get { return _check;  }
+                set
+                {
+                    if (_check != value)
+                    {
+                        NotifyPropertyChanging("Check");
+                        _check = value;
+                        NotifyPropertyChanged("Check");
+                    }
+                }
+            }
+
 
  #region INotifyPropertyChanged Members
 

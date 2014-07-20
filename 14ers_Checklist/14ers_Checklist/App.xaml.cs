@@ -86,6 +86,65 @@ namespace _14ers_Checklist
                 {
                     // Create the local database.
                     db.CreateDatabase();
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Elbert" , Height = 14433, Range="Sawatch", Check = false});
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Massive", Height = 14421, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Harvard", Height = 14420, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Blanca Peak", Height = 14345, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "La Plata Peak", Height = 14336, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Uncompahgre Peak", Height = 14309, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Crestone Peak", Height = 14294, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Lincoln", Height = 14286, Range = "Mosquito Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Grays Peak", Height = 14270, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Antero", Height = 14269, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Torreys Peak", Height = 14267, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Castle Peak", Height = 14265, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Quandary Peak", Height = 14265, Range = "Tenmile Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Evans", Height = 14264, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Longs Peak", Height = 14255, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Wilson", Height = 14246, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Cameron", Height = 14238, Range = "Mosquito Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Shavano", Height = 14229, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Belford", Height = 14197, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Crestone Needle", Height = 14197, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Princeton", Height = 14197, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Yale", Height = 14196, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Bross", Height = 14172, Range = "Mosquito Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Kit Carson Peak", Height = 14165, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "El Diente Peak", Height = 14159, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Maroon Peak", Height = 14156, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Tabeguache Peak", Height = 14155, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Oxford", Height = 14153, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Sneffels", Height = 14148, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Democrat", Height = 14150, Range = "Mosquito Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Capitol Peak", Height = 14148, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Pikes Peak", Height = 14110, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Snowmass Mountain", Height = 14092, Range = "nud", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Eolus", Height = 14083, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Windom Peak", Height = 14082, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Challenger Peak", Height = 14081, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Columbia", Height = 14073, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Missouri Mountain", Height = 14067, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Humboldt Peak", Height = 14064, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Bierstadt", Height = 14060, Range = "Front Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Conundrum Peak", Height = 14060, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Sunlight Peak", Height = 14059, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Handies Peak", Height = 14048, Range = "San Juan Mountains ", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Culebra Peak", Height = 14047, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Ellingwood Point", Height = 14042, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Lindsey", Height = 14042, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "North Eolus", Height = 14039, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Little Bear Peak", Height = 14037, Range = "Sangre de Cristo", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. Sherman", Height = 14036, Range = "Mosquito Range", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Redcloud Peak", Height = 14034, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Pyramid Peak", Height = 14018, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Wilson Peak", Height = 14017, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Wetterhorn Peak", Height = 14015, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "San Luis Peak", Height = 14014, Range = "San Juan Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "North Maroon Peak", Height = 14014, Range = "Elk Mountains", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. of the Holy Cross", Height = 14005, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Huron Peak", Height = 14003, Range = "Sawatch", Check = false });
+                    db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Sunshine Peak", Height = 14001, Range = "San Juan Mountains", Check = false });
+
                     // Save categories to the database.
                     db.SubmitChanges();
                 }

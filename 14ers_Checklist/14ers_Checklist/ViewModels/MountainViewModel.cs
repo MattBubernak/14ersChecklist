@@ -32,5 +32,10 @@ namespace _14ers_Checklist.ViewModels
             get { return databaseInstance.Date; }
         }
 
+        public Boolean Check
+        {
+            get { return databaseInstance.Check; }
+        }
+
     }
 }
