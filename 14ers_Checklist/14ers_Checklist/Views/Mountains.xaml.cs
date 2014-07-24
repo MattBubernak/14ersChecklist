@@ -18,12 +18,19 @@ namespace _14ers_Checklist.Views
         public Mountains()
         {
             InitializeComponent();
-            this.DataContext = ChecklistViewModel.getInstance(); 
+            this.DataContext = ChecklistViewModel.get_instance(); 
         }
 
         private void MountainListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            int selectedIndex = MountainSelector.ItemsSource.IndexOf(MountainSelector.SelectedItem as MountainViewModel);
+            if (selectedIndex >= 0)
+            {
+                //exerciseInstanceHandler.ExerciseInstance = WorkoutLongListSelector.SelectedItem as ExerciseInstance; 
+                NavigationService.Navigate(new Uri("/Views/Mountain.xaml?selectedIndex=" + selectedIndex, UriKind.Relative));
+                //reset the selector so that the same mountain can be selected again. 
+                MountainSelector.SelectedItem = null;
+            }
         }
 
         private void CheckBox_Hit(object sender, RoutedEventArgs e)

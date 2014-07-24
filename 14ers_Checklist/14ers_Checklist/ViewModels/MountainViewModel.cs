@@ -7,13 +7,14 @@ using _14ers_Checklist.Models;
 
 namespace _14ers_Checklist.ViewModels
 {
-    class MountainViewModel
+    class MountainViewModel : BaseViewModel
     {
-        private DataBaseContext.Mountain databaseInstance; 
+        private DataBaseContext.Mountain databaseInstance;
         
         public MountainViewModel(DataBaseContext.Mountain mountain)
         {
-            this.databaseInstance = mountain; 
+            this.databaseInstance = mountain;
+            this.db = App.DB; 
         }
         public string Name
         {
@@ -39,7 +40,19 @@ namespace _14ers_Checklist.ViewModels
         public Boolean Check
         {
             get { return databaseInstance.Check; }
-            set { databaseInstance.Check = true; }
+            set 
+            {
+                if (value == false)
+                {
+                    databaseInstance.Check = false;
+                }
+                else
+                {
+                    databaseInstance.Check = true; 
+                }
+                db.SubmitChanges();
+                NotifyPropertyChanged("Check"); 
+            }
         }
 
     }

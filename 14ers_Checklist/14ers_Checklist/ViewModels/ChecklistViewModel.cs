@@ -20,7 +20,7 @@ namespace _14ers_Checklist.ViewModels
             populate_mountains(); 
         }
 
-        public static ChecklistViewModel getInstance()
+        public static ChecklistViewModel get_instance()
         {
             if (_checkListViewModel == null)
             {
@@ -31,9 +31,10 @@ namespace _14ers_Checklist.ViewModels
 
         public void populate_mountains()
         {
-            mountains = new ObservableCollection<MountainViewModel>(from DataBaseContext.Mountain instance in db.Mountains select new MountainViewModel(instance));
 
             //populate the mountains list from the DB 
+            mountains = new ObservableCollection<MountainViewModel>(from DataBaseContext.Mountain instance in db.Mountains select new MountainViewModel(instance));
+            
         }
     }
 }

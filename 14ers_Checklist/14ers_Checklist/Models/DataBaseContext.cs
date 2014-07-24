@@ -104,7 +104,7 @@ namespace _14ers_Checklist.Models
                 }
             }
 
-            private DateTime _date; 
+            private DateTime _date;
 
             public DateTime Date
             {
@@ -121,7 +121,7 @@ namespace _14ers_Checklist.Models
             }
 
             private Boolean _check; 
-
+            [Column]
             public Boolean Check
             {
                 get { return _check;  }

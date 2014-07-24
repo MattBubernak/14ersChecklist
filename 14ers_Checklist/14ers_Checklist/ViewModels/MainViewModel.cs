@@ -7,11 +7,19 @@ namespace _14ers_Checklist.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        public MainViewModel()
+        private static MainViewModel _instance = null;
+        private MainViewModel()
         {
             this.Items = new ObservableCollection<ItemViewModel>();
         }
-
+        public static MainViewModel get_instance()
+        {
+            if (_instance == null)
+            {
+                _instance = new MainViewModel();
+            }
+            return _instance; 
+        }
         /// <summary>
         /// A collection for ItemViewModel objects.
         /// </summary>
