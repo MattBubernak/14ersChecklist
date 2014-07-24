@@ -36,5 +36,21 @@ namespace _14ers_Checklist.ViewModels
             mountains = new ObservableCollection<MountainViewModel>(from DataBaseContext.Mountain instance in db.Mountains select new MountainViewModel(instance));
             
         }
+
+        public string TotalString
+        {
+            get
+            {
+                int total = 0; 
+                foreach (MountainViewModel mountain in mountains)
+                {
+                    if (mountain.Check == true)
+                    {
+                        total++; 
+                    }
+                }
+                return total + "/" + mountains.Count; 
+            }
+        }
     }
 }

@@ -19,7 +19,7 @@
             <ImageBrush ImageSource = "/Images/Background.jpg"
                         Stretch = "UniformToFill" />
         </Grid.Background>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -28,12 +28,13 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="14ers Checklist" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding TotalString}" Style="{StaticResource PhoneTextAccentStyle}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="151,0,149,0" Width="168"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid x:Name="MountainPanel" Grid.Row="1" Margin="12,0,12,0">
-                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-36,-12,0" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="670" VerticalAlignment="Bottom">
+                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-20,-12,0" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="611" VerticalAlignment="Bottom">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,0,0,17">
@@ -45,11 +46,11 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="350"></ColumnDefinition>
                                     <ColumnDefinition Width="70"></ColumnDefinition>
-                                 </Grid.ColumnDefinitions>
-                                
+                                </Grid.ColumnDefinitions>
+
                                 <TextBlock Grid.Row="0" Grid.Column ="0" Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                                 <TextBlock Grid.Row ="1" Grid.Column="0" Text="{Binding HeightString}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextAccentStyle}" />
-                                <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding Check}" Click="CheckBox_Hit"></CheckBox>    
+                                <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding Check}" Click="CheckBox_Hit"></CheckBox>
                             </Grid>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
