@@ -28,7 +28,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="14ers Checklist" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-            <TextBlock Text="{Binding TotalString}" Style="{StaticResource PhoneTextAccentStyle}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="151,0,149,0" Width="168"/>
+            <TextBlock Text="{Binding TotalString}" Style="{StaticResource PhoneTextAccentStyle}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="164,0,136,0" Width="168"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
