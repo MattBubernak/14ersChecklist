@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:c4fToolkit="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
 
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -40,12 +41,13 @@
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem Header="Ascent">
+            <phone:PanoramaItem Header="Ascent" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <StackPanel>
                     <TextBlock>Date</TextBlock>
 
                     <toolkit:DatePicker x:Name="DateBox"></toolkit:DatePicker>
-                    
+                    <TextBlock>Time</TextBlock>
+                    <c4fToolkit:TimeSpanPicker Value="{Binding Time}" Step="0:5"></c4fToolkit:TimeSpanPicker>
                     <TextBlock>Description</TextBlock>
                     <TextBox  TextWrapping="Wrap" Height="400"></TextBox>
                 </StackPanel>

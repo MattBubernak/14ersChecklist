@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using _14ers_Checklist.ViewModels;
+using System.Diagnostics;
+using Coding4Fun.Toolkit.Controls; 
 
 namespace _14ers_Checklist.Views
 {
@@ -16,7 +18,9 @@ namespace _14ers_Checklist.Views
         public Mountain()
         {
             InitializeComponent();
-            DataContext = null; 
+            DataContext = null;
+            UpdatePanoramaAppBar(0);
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -40,7 +44,6 @@ namespace _14ers_Checklist.Views
 
         private void UpdatePanoramaAppBar(int index)
         {
-
             //create a new application bar
             ApplicationBar = new ApplicationBar();
 
@@ -68,7 +71,9 @@ namespace _14ers_Checklist.Views
             }
         }
 
-        private void panoramaControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void Save_Ascent(object sender, EventArgs e)
         {
 
         }
