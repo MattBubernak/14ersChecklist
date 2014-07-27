@@ -19,7 +19,7 @@
     <Grid x:Name="LayoutRoot">
         
         
-        <phone:Panorama Title="{Binding Name}">
+        <phone:Panorama x:Name="panoramaControl" Title="{Binding Name}" SelectionChanged="panoramaControl_SelectionChanged">
             <phone:Panorama.Background>
                 <ImageBrush ImageSource = "/Images/Mountain.jpg"
                          />
@@ -60,5 +60,7 @@
             
         </phone:Panorama>
     </Grid>
+
+    
 
 </phone:PhoneApplicationPage>

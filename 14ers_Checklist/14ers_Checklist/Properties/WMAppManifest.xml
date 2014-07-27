@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{31b5473a-0479-4251-b085-1d1016abe8fc}" Title="_14ers_Checklist" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="_14ers_Checklist author" Description="Sample description" Publisher="_14ers_Checklist" PublisherID="{5f4c3cb4-a52a-4a16-979a-71767767d28b}">
+  <App xmlns="" ProductID="{31b5473a-0479-4251-b085-1d1016abe8fc}" Title="14ers Checklist" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="_14ers_Checklist author" Description="Sample description" Publisher="_14ers_Checklist" PublisherID="{5f4c3cb4-a52a-4a16-979a-71767767d28b}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -19,7 +19,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>_14ers_Checklist</Title>
+          <Title>14ers Checklist</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
