@@ -8,7 +8,7 @@ using _14ers_Checklist.Models;
 
 namespace _14ers_Checklist.ViewModels
 {
-    class ChecklistViewModel : BaseViewModel
+    public class ChecklistViewModel : BaseViewModel
     {
         private static ChecklistViewModel _checkListViewModel = null;
         public ObservableCollection<MountainViewModel> mountains { get; set; }
@@ -49,6 +49,15 @@ namespace _14ers_Checklist.ViewModels
                     }
                 }
                 return total + "/" + mountains.Count; 
+            }
+        }
+
+        public void NotifyProperties()
+        {
+            NotifyPropertyChanged("TotalString"); 
+            foreach (MountainViewModel mountain in mountains)
+            {
+                mountain.NotifyPropertyChanged("Check"); 
             }
         }
     }

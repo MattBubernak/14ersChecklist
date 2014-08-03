@@ -22,6 +22,7 @@ namespace _14ers_Checklist.Models
         // Specify a table for the to-do items.
         public Table<Mountain> Mountains;
         public Table<Note> Notes;
+        //public Table<Ascent> Ascents; 
        
 
 
@@ -31,7 +32,7 @@ namespace _14ers_Checklist.Models
         public class Mountain : INotifyPropertyChanged, INotifyPropertyChanging
         {
 
-            
+            public Mountain(){}
             // Define ID: private field, public property, and database column.
             private int _mountainID;
 
@@ -104,9 +105,11 @@ namespace _14ers_Checklist.Models
                 }
             }
 
-            private DateTime _date;
+            // Define item name: private field, public property, and database column.
+            private DateTime? _date;
 
-            public DateTime Date
+            [Column]
+            public DateTime? Date
             {
                 get { return _date; }
                 set
@@ -116,6 +119,41 @@ namespace _14ers_Checklist.Models
                         NotifyPropertyChanging("Date");
                         _date = value;
                         NotifyPropertyChanged("Date");
+                    }
+                }
+            }
+            /*
+            private TimeSpan _time;
+
+            [Column]
+            public TimeSpan Time
+            {
+                get { return _time; }
+                set
+                {
+                    if (_time != value)
+                    {
+                        NotifyPropertyChanging("Time");
+                        _time = value;
+                        NotifyPropertyChanged("Time");
+                    }
+                }
+            }
+             */
+
+            private String _message;
+
+            [Column]
+            public String Message
+            {
+                get { return _message; }
+                set
+                {
+                    if (_message != value)
+                    {
+                        NotifyPropertyChanging("Message");
+                        _message = value;
+                        NotifyPropertyChanged("Message");
                     }
                 }
             }
@@ -135,9 +173,41 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
+            /*
+            private EntitySet<Ascent> _ascent;
+
+            [Association(Storage = "_ascent", OtherKey = "_linkedMountainID", ThisKey = "MountainID")]
+            public EntitySet<Ascent> Ascent
+            {
+                get { return this._ascent; }
+                set { this._ascent.Assign(value); }
+            }
+            // Called during an add operation
+            private void attach_Instance(Ascent ascent)
+            {
+                NotifyPropertyChanging("ExerciseInstance");
+                ascent.Mountain = this;
+            }
+             
+
+            // Called during a remove operation
+            private void detach_Instance(Ascent ascent)
+            {
+                NotifyPropertyChanging("ExerciseInstance");
+                ascent.Mountain = null;
+            }
+
+            public Mountain()
+            {
+                _ascent = new EntitySet<Ascent>(
+                new Action<Ascent>(this.attach_Instance),
+                new Action<Ascent>(this.detach_Instance)
+                );
+            }
+           */
 
 
- #region INotifyPropertyChanged Members
+            #region INotifyPropertyChanged Members
 
             public event PropertyChangedEventHandler PropertyChanged;
 
@@ -282,7 +352,145 @@ namespace _14ers_Checklist.Models
         }
         #endregion
 
+        /*
+        #region Ascent
+        //player
+        [Table]
+        public class Ascent : INotifyPropertyChanged, INotifyPropertyChanging
+        {
+            public Ascent()
+            {
 
+            }
+
+            // Define ID: private field, public property, and database column.
+            private int _ascentID;
+
+            [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity", CanBeNull = false, AutoSync = AutoSync.OnInsert)]
+            public int AscentID
+            {
+                get { return _ascentID; }
+                set
+                {
+                    if (_ascentID != value)
+                    {
+                        NotifyPropertyChanging("AscentID");
+                        _ascentID = value;
+                        NotifyPropertyChanged("AscentID");
+                    }
+                }
+            }
+
+            // Define item name: private field, public property, and database column.
+            private DateTime _date;
+
+            [Column]
+            public DateTime Date
+            {
+                get { return _date; }
+                set
+                {
+                    if (_date != value)
+                    {
+                        NotifyPropertyChanging("Date");
+                        _date = value;
+                        NotifyPropertyChanged("Date");
+                    }
+                }
+            }
+
+            private TimeSpan _time;
+
+            [Column]
+            public TimeSpan Time
+            {
+                get { return _time; }
+                set
+                {
+                    if (_time != value)
+                    {
+                        NotifyPropertyChanging("Time");
+                        _time = value;
+                        NotifyPropertyChanged("Time");
+                    }
+                }
+            }
+
+            private String _message;
+
+            [Column]
+            public String Message
+            {
+                get { return _message; }
+                set
+                {
+                    if (_message != value)
+                    {
+                        NotifyPropertyChanging("Message");
+                        _message = value;
+                        NotifyPropertyChanged("Message");
+                    }
+                }
+            }
+
+            [Column]
+            internal int _linkedMountainID;
+
+            private EntityRef<Mountain> _mountain; 
+
+            [Association(Storage = "_moutain", ThisKey = "_linkedMountainID", OtherKey = "MountainID", IsForeignKey = true)]
+            public Mountain Mountain
+            {
+                get { return _mountain.Entity; }
+                set
+                {
+                    NotifyPropertyChanging("Mountain");
+                    _mountain.Entity = value;
+
+                    if (value != null)
+                    {
+                        _linkedMountainID = value.MountainID;
+                    }
+
+                    NotifyPropertyChanging("Mountain");
+                }
+            }
+
+
+
+            #region INotifyPropertyChanged Members
+
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            // Used to notify that a property changed
+            private void NotifyPropertyChanged(string propertyName)
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+
+            #endregion
+
+            #region INotifyPropertyChanging Members
+
+            public event PropertyChangingEventHandler PropertyChanging;
+
+            // Used to notify that a property is about to change
+            private void NotifyPropertyChanging(string propertyName)
+            {
+                if (PropertyChanging != null)
+                {
+                    PropertyChanging(this, new PropertyChangingEventArgs(propertyName));
+                }
+            }
+
+            #endregion
+        }
+        #endregion
+
+        */
 
     }
 }

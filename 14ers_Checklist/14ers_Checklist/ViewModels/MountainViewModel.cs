@@ -7,7 +7,7 @@ using _14ers_Checklist.Models;
 
 namespace _14ers_Checklist.ViewModels
 {
-    class MountainViewModel : BaseViewModel
+    public class MountainViewModel : BaseViewModel
     {
         private DataBaseContext.Mountain databaseInstance;
         
@@ -32,9 +32,17 @@ namespace _14ers_Checklist.ViewModels
         {
             get { return String.Format("{0:n0}",databaseInstance.Height); }
         }
-        public DateTime Date
+        public DateTime? Date
         {
             get { return databaseInstance.Date; }
+        }
+        //public TimeSpan Time
+        //{
+         //   get { return databaseInstance.Time ; }
+        //}
+        public String Message
+        {
+            get { return databaseInstance.Message; }
         }
 
         public Boolean Check
@@ -42,17 +50,21 @@ namespace _14ers_Checklist.ViewModels
             get { return databaseInstance.Check; }
             set 
             {
-                if (value == false)
-                {
-                    databaseInstance.Check = false;
-                }
-                else
-                {
-                    databaseInstance.Check = true; 
-                }
+                databaseInstance.Check = value; 
                 db.SubmitChanges();
                 NotifyPropertyChanged("Check"); 
             }
+        }
+        
+        public void Update_Ascent(DateTime date, TimeSpan time, string log)
+        {
+            databaseInstance.Date = date;
+            //databaseInstance.Time = time;
+            databaseInstance.Message = log;
+            db.SubmitChanges();
+            NotifyPropertyChanged("Date");
+            NotifyPropertyChanged("Time");
+            NotifyPropertyChanged("Message");
         }
 
     }

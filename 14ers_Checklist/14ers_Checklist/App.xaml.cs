@@ -9,6 +9,8 @@ using Microsoft.Phone.Shell;
 using _14ers_Checklist.Resources;
 using _14ers_Checklist.ViewModels;
 using _14ers_Checklist.Models;
+using System.Linq;
+
 
 namespace _14ers_Checklist
 {
@@ -133,8 +135,15 @@ namespace _14ers_Checklist
                     db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Mt. of the Holy Cross", Height = 14005, Range = "Sawatch", Check = false });
                     db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Huron Peak", Height = 14003, Range = "Sawatch", Check = false });
                     db.Mountains.InsertOnSubmit(new DataBaseContext.Mountain { Name = "Sunshine Peak", Height = 14001, Range = "San Juan Mountains", Check = false });
-
+                    //create an ascent for each mountain 
+                    /*
+                    var mountains = from DataBaseContext.Mountain mountain in db.Mountains select mountain;
+                    foreach (DataBaseContext.Mountain mountain in mountains)
+                    {
+                        db.Ascents.InsertOnSubmit(new DataBaseContext.Ascent { _linkedMountainID = mountain.MountainID });
+                    }
                     // Save categories to the database.
+                     */
                     db.SubmitChanges();
                 }
 

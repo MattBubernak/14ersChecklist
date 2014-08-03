@@ -6,6 +6,8 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:my="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -34,7 +36,7 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid x:Name="MountainPanel" Grid.Row="1" Margin="12,0,12,0">
-                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-20,-12,0" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="611" VerticalAlignment="Bottom">
+                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-20,-12,150" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="461" VerticalAlignment="Bottom">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,0,0,17">
@@ -55,6 +57,8 @@
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
+                <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" ErrorOccurred="OnAdError_ErrorOccurred" Margin="-26,446,-22,65"  />
+
             </Grid>
         </Grid>
     </Grid>
