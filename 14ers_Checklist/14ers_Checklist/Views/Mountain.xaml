@@ -36,7 +36,7 @@
                     <TextBlock Text="{Binding Range}" FontSize ="{StaticResource PhoneFontSizeLarge}" Style ="{StaticResource PhoneTextAccentStyle }"></TextBlock>
                     <TextBlock>Height</TextBlock>
                     <TextBlock Text="{Binding HeightString}" FontSize ="{StaticResource PhoneFontSizeLarge}" Style ="{StaticResource PhoneTextAccentStyle }"></TextBlock>
-                    <my:AdControl AdUnitId="185207" Margin="0,200,0,0" Background="Gray" x:Name="adControl4" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" ErrorOccurred="OnAdError_ErrorOccurred"  />
+                    <my:AdControl AdUnitId="185207" Margin="0,200,0,0" Background="Gray" x:Name="adControl4" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80"  />
 
 
                 </StackPanel>
@@ -54,7 +54,7 @@
                     <c4fToolkit:TimeSpanPicker x:Name="TimeSpanBox" Value="{Binding Time}" Step="0:5"></c4fToolkit:TimeSpanPicker>
                     <TextBlock>Description</TextBlock>
                     <TextBox  x:Name ="LogBox" TextWrapping="Wrap" Height="400" Text="{Binding Message}"></TextBox>
-                        <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" ErrorOccurred="OnAdError_ErrorOccurred"  />
+                        <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" />
 
                     </StackPanel>
                 </ScrollViewer>
@@ -64,7 +64,7 @@
             <phone:PanoramaItem Header="Notes">
                 <StackPanel>
                     <TextBlock>Coming soon....</TextBlock>
-                    <my:AdControl AdUnitId="185207" Margin="0,500,0,0" Background="Gray" x:Name="adControl3" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" ErrorOccurred="OnAdError_ErrorOccurred"  />
+                    <my:AdControl AdUnitId="185207" Margin="0,500,0,0" Background="Gray" x:Name="adControl3" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80"  />
 
                 </StackPanel>
             </phone:PanoramaItem>

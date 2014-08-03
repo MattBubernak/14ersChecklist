@@ -96,6 +96,11 @@ namespace _14ers_Checklist.Views
             return result; 
         }
 
+        private void About(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/About.xaml", UriKind.Relative));
+        }
+
        
 
 

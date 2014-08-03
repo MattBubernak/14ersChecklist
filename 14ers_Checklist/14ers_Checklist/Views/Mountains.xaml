@@ -30,13 +30,13 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="14ers Checklist" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-            <TextBlock Text="{Binding TotalString}" Style="{StaticResource PhoneTextAccentStyle}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="164,0,136,0" Width="168"/>
+            <TextBlock Text="{Binding TotalString}" Style="{StaticResource PhoneTextAccentStyle}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="176,0,124,0" Width="168"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid x:Name="MountainPanel" Grid.Row="1" Margin="12,0,12,0">
-                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-20,-12,150" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="461" VerticalAlignment="Bottom">
+                <phone:LongListSelector x:Name="MountainSelector" Margin="0,-13,-12,78" ItemsSource="{Binding mountains}" SelectionChanged="MountainListSelector_SelectionChanged" Height="454" VerticalAlignment="Bottom">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0,0,0,17">
@@ -57,10 +57,15 @@
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
-                <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" ErrorOccurred="OnAdError_ErrorOccurred" Margin="-26,446,-22,65"  />
+                <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" Margin="-26,446,-22,65"  />
 
             </Grid>
         </Grid>
     </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton Click="About" IconUri="/Images/questionmark.png" Text="About"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

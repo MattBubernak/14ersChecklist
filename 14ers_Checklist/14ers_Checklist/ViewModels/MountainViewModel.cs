@@ -69,7 +69,7 @@ namespace _14ers_Checklist.ViewModels
         public void Update_Ascent(DateTime date, TimeSpan time, string log)
         {
             databaseInstance.Date = date;
-            //databaseInstance.Time = time;
+            databaseInstance.Time = (int)time.TotalSeconds;
             databaseInstance.Message = log;
             db.SubmitChanges();
             NotifyPropertyChanged("Date");
