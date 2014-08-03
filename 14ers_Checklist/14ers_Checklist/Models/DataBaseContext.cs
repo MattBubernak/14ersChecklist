@@ -122,11 +122,11 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
-            /*
-            private TimeSpan _time;
+
+            private int _time;
 
             [Column]
-            public TimeSpan Time
+            public int Time
             {
                 get { return _time; }
                 set
@@ -139,7 +139,7 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
-             */
+             
 
             private String _message;
 

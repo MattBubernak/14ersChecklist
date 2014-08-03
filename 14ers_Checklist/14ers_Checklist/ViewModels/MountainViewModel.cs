@@ -10,11 +10,13 @@ namespace _14ers_Checklist.ViewModels
     public class MountainViewModel : BaseViewModel
     {
         private DataBaseContext.Mountain databaseInstance;
+        public TimeSpan timeSpan; 
         
         public MountainViewModel(DataBaseContext.Mountain mountain)
         {
             this.databaseInstance = mountain;
-            this.db = App.DB; 
+            this.db = App.DB;
+            this.timeSpan = new TimeSpan(0, 0, mountain.Time);  
         }
         public string Name
         {
@@ -36,10 +38,18 @@ namespace _14ers_Checklist.ViewModels
         {
             get { return databaseInstance.Date; }
         }
-        //public TimeSpan Time
-        //{
-         //   get { return databaseInstance.Time ; }
-        //}
+        public TimeSpan Time
+        {
+            get 
+            {
+                return timeSpan; 
+            }
+            set
+            {
+                this.timeSpan = value;
+                databaseInstance.Time = (int)this.timeSpan.TotalSeconds; 
+            }
+        }
         public String Message
         {
             get { return databaseInstance.Message; }
