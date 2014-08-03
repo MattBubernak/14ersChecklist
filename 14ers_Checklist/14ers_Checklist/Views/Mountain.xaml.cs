@@ -36,6 +36,12 @@ namespace _14ers_Checklist.Views
                     mountain = ChecklistViewModel.get_instance().mountains[index]; 
                 }
             }
+            if (mountain.Check == false)
+            {
+                AscentItem.Visibility = System.Windows.Visibility.Collapsed;
+                panoramaControl.DefaultItem = panoramaControl.DefaultItem; 
+
+            }
         }
 
         private void panoramaControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,6 +95,26 @@ namespace _14ers_Checklist.Views
         {
             NavigationService.Navigate(new Uri("/Views/Mountains.xaml", UriKind.Relative));
 
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            if (mountain.Check == true)
+            {
+                Debug.WriteLine("check was true"); 
+                mountain.Check = false; 
+                AscentItem.Visibility = System.Windows.Visibility.Collapsed;
+                panoramaControl.DefaultItem = panoramaControl.DefaultItem; 
+            }
+            else
+            {
+                Debug.WriteLine("check was false"); 
+
+                mountain.Check = true;
+                AscentItem.Visibility = System.Windows.Visibility.Visible;
+                panoramaControl.DefaultItem = panoramaControl.DefaultItem; 
+
+            }
         }
     }
 }

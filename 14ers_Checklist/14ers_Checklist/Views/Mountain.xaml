@@ -29,7 +29,8 @@
             <!--Panorama item one-->
             <phone:PanoramaItem Header="Info">
                 <StackPanel>
-                    <CheckBox HorizontalAlignment="Center" IsChecked="{Binding Check}"></CheckBox>
+                    <CheckBox  IsChecked="{Binding Check}" Width="62" Click="Check_Click" />
+
                     <TextBlock>Name</TextBlock>
                     <TextBlock Text="{Binding Name}" FontSize ="{StaticResource PhoneFontSizeLarge}" Style ="{StaticResource PhoneTextAccentStyle }"></TextBlock>
                     <TextBlock>Range</TextBlock>
@@ -43,17 +44,24 @@
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem Header="Ascent">
+            <phone:PanoramaItem Header="Ascent" x:Name="AscentItem">
                 <ScrollViewer>
-                <StackPanel>
+                    <StackPanel>
 
-                    <TextBlock>Date</TextBlock>
 
-                    <toolkit:DatePicker x:Name="DateBox" Value="{Binding Date}"></toolkit:DatePicker>
-                    <TextBlock>Time</TextBlock>
-                    <c4fToolkit:TimeSpanPicker x:Name="TimeSpanBox" Value="{Binding Time}" Step="0:5"></c4fToolkit:TimeSpanPicker>
-                    <TextBlock>Description</TextBlock>
-                    <TextBox  x:Name ="LogBox" TextWrapping="Wrap" Height="400" Text="{Binding Message}"></TextBox>
+                        <TextBlock>
+                    	<Run Text="Date"/>
+                        </TextBlock>
+
+                        <toolkit:DatePicker x:Name="DateBox" Value="{Binding Date}"/>
+                        <TextBlock>
+                    	<Run Text="Time"/>
+                        </TextBlock>
+                        <c4fToolkit:TimeSpanPicker x:Name="TimeSpanBox" Value="{Binding Time}" Step="0:5"/>
+                        <TextBlock>
+                    	<Run Text="Description"/>
+                        </TextBlock>
+                        <TextBox  x:Name ="LogBox" TextWrapping="Wrap" Height="400" Text="{Binding Message}"/>
                         <my:AdControl AdUnitId="185207" Background="Gray" x:Name="adControl2" ApplicationId="488ba1e7-5eb2-4990-ba8a-5b1ea69360b4" HorizontalAlignment="Center" Width="480" Height="80" />
 
                     </StackPanel>
@@ -68,10 +76,10 @@
 
                 </StackPanel>
             </phone:PanoramaItem>
-            
+
         </phone:Panorama>
     </Grid>
 
-    
+
 
 </phone:PhoneApplicationPage>

@@ -32,7 +32,6 @@ namespace _14ers_Checklist.Models
         public class Mountain : INotifyPropertyChanged, INotifyPropertyChanging
         {
 
-            public Mountain(){}
             // Define ID: private field, public property, and database column.
             private int _mountainID;
 
@@ -173,38 +172,38 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
-            /*
-            private EntitySet<Ascent> _ascent;
+            
+            private EntitySet<Note> _notes;
 
-            [Association(Storage = "_ascent", OtherKey = "_linkedMountainID", ThisKey = "MountainID")]
-            public EntitySet<Ascent> Ascent
+            [Association(Storage = "_notes", OtherKey = "_linkedMountainID", ThisKey = "MountainID")]
+            public EntitySet<Note> Notes
             {
-                get { return this._ascent; }
-                set { this._ascent.Assign(value); }
+                get { return this._notes; }
+                set { this._notes.Assign(value); }
             }
             // Called during an add operation
-            private void attach_Instance(Ascent ascent)
+            private void attach_Instance(Note note)
             {
                 NotifyPropertyChanging("ExerciseInstance");
-                ascent.Mountain = this;
+                note.Mountain = this;
             }
              
 
             // Called during a remove operation
-            private void detach_Instance(Ascent ascent)
+            private void detach_Instance(Note note)
             {
                 NotifyPropertyChanging("ExerciseInstance");
-                ascent.Mountain = null;
+                note.Mountain = null;
             }
 
             public Mountain()
             {
-                _ascent = new EntitySet<Ascent>(
-                new Action<Ascent>(this.attach_Instance),
-                new Action<Ascent>(this.detach_Instance)
+                _notes = new EntitySet<Note>(
+                new Action<Note>(this.attach_Instance),
+                new Action<Note>(this.detach_Instance)
                 );
             }
-           */
+           
 
 
             #region INotifyPropertyChanged Members
@@ -320,6 +319,31 @@ namespace _14ers_Checklist.Models
                     }
                 }
             }
+
+            [Column]
+            internal int _linkedMountainID;
+
+            private EntityRef<Mountain> _mountain; 
+
+            [Association(Storage = "_mountain", ThisKey = "_linkedMountainID", OtherKey = "MountainID", IsForeignKey = true)]
+            public Mountain Mountain
+            {
+                get { return _mountain.Entity; }
+                set
+                {
+                    NotifyPropertyChanging("Mountain");
+                    _mountain.Entity = value;
+
+                    if (value != null)
+                    {
+                        _linkedMountainID = value.MountainID;
+                    }
+
+                    NotifyPropertyChanging("Mountain");
+                }
+            }
+
+
          #region INotifyPropertyChanged Members
 
             public event PropertyChangedEventHandler PropertyChanged;
