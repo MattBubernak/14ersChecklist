@@ -16,6 +16,7 @@ namespace _14ers_Checklist.Views
     {
         const string CONFIRM_UNCHECK = "Are you sure you want to uncheck this mountain? Your ascent info will be lost";
         const string CONFIRM_TITLE = "Confirm Uncheck";
+        public bool preventNav = false; // if a checkbox is deselected we do not want to navigate to mountain still, use this variable for that. 
         public ChecklistViewModel checklistViewModel = null; 
         public Mountains()
         {
@@ -30,10 +31,19 @@ namespace _14ers_Checklist.Views
             int selectedIndex = MountainSelector.ItemsSource.IndexOf(MountainSelector.SelectedItem as MountainViewModel);
             if (selectedIndex >= 0)
             {
-                //exerciseInstanceHandler.ExerciseInstance = WorkoutLongListSelector.SelectedItem as ExerciseInstance; 
-                NavigationService.Navigate(new Uri("/Views/Mountain.xaml?selectedIndex=" + selectedIndex, UriKind.Relative));
-                //reset the selector so that the same mountain can be selected again. 
-                MountainSelector.SelectedItem = null;
+                if (!preventNav)
+                {
+                    //exerciseInstanceHandler.ExerciseInstance = WorkoutLongListSelector.SelectedItem as ExerciseInstance; 
+                    NavigationService.Navigate(new Uri("/Views/Mountain.xaml?selectedIndex=" + selectedIndex, UriKind.Relative));
+                    //reset the selector so that the same mountain can be selected again. 
+                    MountainSelector.SelectedItem = null;
+
+                }
+                else
+                {
+                    preventNav = false; 
+                }
+                
             }
             //Debug.WriteLine("leavings long list selecter changed");
 
@@ -75,6 +85,7 @@ namespace _14ers_Checklist.Views
              */
             if (clicked.Check)
             {
+                preventNav = true; 
                 clicked.Check = false;
                 (sender as CheckBox).IsChecked = false;
                 Debug.WriteLine((sender as CheckBox).IsChecked);
@@ -82,6 +93,7 @@ namespace _14ers_Checklist.Views
             }
             else
             {
+                preventNav = false; 
                 clicked.Check = true;
                 (sender as CheckBox).IsChecked = true;
                 Debug.WriteLine((sender as CheckBox).IsChecked);
