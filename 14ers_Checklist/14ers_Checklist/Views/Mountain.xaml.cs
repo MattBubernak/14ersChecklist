@@ -85,10 +85,24 @@ namespace _14ers_Checklist.Views
 
         private void Save_Ascent(object sender, EventArgs e)
         {
+            if (DateBox.Value == null)
+            {
+                Show_Message("Please enter a date", "error");
+                return; 
+            }
             DateTime date = (DateTime)DateBox.Value;
+            
             TimeSpan time = (TimeSpan)TimeSpanBox.Value;
             String info = LogBox.Text.ToString();
-            mountain.Update_Ascent(date, time, info); 
+            mountain.Update_Ascent(date, time, info);
+            Show_Message("Ascent has been saved", "success");
+
+        }
+
+        private MessageBoxResult Show_Message(string message, string messageTitle)
+        {
+            MessageBoxResult result = MessageBox.Show(message, messageTitle, MessageBoxButton.OK);
+            return result;
         }
 
         protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
